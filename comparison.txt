@@ -1,0 +1,22 @@
+This file compares the time efficiency of the 3 implemented algorithms. 
+
+Abbreviations :
+
+ccl - connected component labelling algorithm
+minCut - graph min cut algorithm
+mst - minimum spanning tree algorithm
+
+Image Size									Time Taken (seconds)
+
+				ccl			minCut(w/o capacity scaling)		minCut(with capacity scaling)		mst
+
+10*10			0			0									0									0
+64*64			0			27									27									1.5
+289*97			0			72									33									41
+204*204			0			1390								748									93
+
+Clearly, connected component labelling is extremely time efficient, however it requires manual input of the seed nodes.
+The graph cut approach is very time inefficient and even though capacity scaling reduces times by almost 50% in larger images, it is still not able to compete with the other algorithms.
+The minimum spanning tree takes more time than connected component labelling, however it requires no user input in the form of seed nodes or otherwise.
+
+The best approach therefore would be to automate seed node selection using an algorithm like SIFT and then combine that with connected component labelling.

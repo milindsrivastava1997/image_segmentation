@@ -1,0 +1,12 @@
+*.png
+*.jpg
+*.JPG
+*.jpeg
+*.tar.gz
+CMakeCache.txt
+Makefile
+*.cmake
+CMakeFiles/
+minCut
+mst
+ccl
